@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read more example</title>
+     <style>
+    body {
+      font-family: Arial;
+      margin: 20px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  </style>
+
+
+<!-- <script>
+     function toggleText() {
+        let moreText = document.getElementById("more");
+        let btn = document.getElementById("btn");
+
+        if (moreText.style.display === "none") {
+           moreText.style.display = "inline";
+           btn.innerHTML = "Read Less";
+        } 
+        else{
+           moreText.style.display = "none";
+           btn.innerHTML = "Read More";
+        }
+     }
+</script> -->
+
+<script>
+    function toggleText() {
+      let moreText = document.getElementById("more");
+      let btn = document.getElementById("btn");
+
+      if (moreText.style.display === "none") {
+        moreText.style.display = "inline";
+        btn.innerHTML = "Read Less";
+      } else {
+        moreText.style.display = "none";
+        btn.innerHTML = "Read More";
+      }
+    }
+  </script>
+</head>
+<body>
+    <!-- 2. Suppose in your webpage there is content area in which you have entered your item details, but user can only see some details on first look. When user clicks on “Read more” button, full detail of that particular item will be displayed. -->
+    <h2>Item details</h2>
+    <p>this is a great product with amazing feature
+        <span id="more" style="display: none;"> It is built with high-quality materials, offers excellent performance,
+      and comes with a long-lasting battery. Perfect for everyday use and
+      highly recommended for everyone.
+        </span>
+    </p>
+    <button id="btn" onclick="toggleText()">Read more</button>
+     
+</body>
+</html>

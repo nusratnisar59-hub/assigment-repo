@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     <style>
+    body { 
+        font-family: Arial; margin: 20px;
+    }
+    input {
+         margin: 5px; padding: 5px;
+         }
+    button {
+         padding: 5px 10px;
+          margin: 2px;
+           cursor: pointer;
+         }
+    table {
+         border-collapse: collapse;
+          width: 60%; 
+          margin-top: 20px; 
+        }
+    th, td {
+         border: 1px solid black; 
+         padding: 8px;
+          text-align: center;
+         }
+    #editForm {
+         display: none;
+          margin-top: 20px;
+           border: 1px solid #000;
+            padding: 10px;
+             width: 300px;
+             }
+  </style>
+
+   <!-- <script>
+      let selectedRow = null;
+
+      function addStuden(event) {
+       event.preventDefault();
+
+       let name = document.getElementById("name").value;
+       let age = document.getElementById("age").value;
+       let grade = document.getElementById("grade").value;
+
+       let table = document.getElementById("studentTable");
+
+       let row = table.insertRow();
+
+       row.innerHTML =
+       "<td>" + name + "</td>" +
+       "<td>" + age + "</td>" +
+       "<td>" + grade + "</td>" +
+       "<td>" +
+        "<button onclick='editRow(this)'>Edit</button>" +
+        "<button onclick='deletRow(this)'>Delete</button>" +
+        "</td>";
+
+        document.getElementById("form").reset();
+      }
+      function deleteRow(btn) {
+        let row = btn.parentNode.parentNode;
+        row.remove();
+      }
+
+      function editRow(btn) {
+        selectedRow = btn.parentNode.parentNode;
+
+        document.getElementById("editName").value = selectedRow.cells[0].innerHTML;
+        document.getElementById("editAge").value = selectedRow.cells[1].innerHTML;
+        document.getElementById("editGrade").value = selectedRow.cells[2].innerHTML;
+
+        document.getElementById("editForm").style.display = "block";
+      }
+
+      function updateStudent(event) {
+        event.preventDefault();
+
+        selectedRow.cells[0].innerHTML = document.getElementById("editName").value;
+        selectedRow.cells[1].innerHTML = document.getElementById("editAge").value;
+        selectedRow.cells[2].innerHTML = document.getElementById("editGrade").value;
+
+        document.getElementById("editForm").style.display = "none";
+      }
+   </script> -->
+
+
+ <script>
+    let selectedRow = null;
+
+    function addStudent(event) {
+      event.preventDefault();
+
+      let name = document.getElementById("name").value;
+      let age = document.getElementById("age").value;
+      let grade = document.getElementById("grade").value;
+
+      let table = document.getElementById("studentTable");
+
+      let row = table.insertRow();
+
+      row.innerHTML =
+        "<td>" + name + "</td>" +
+        "<td>" + age + "</td>" +
+        "<td>" + grade + "</td>" +
+        "<td>" +
+        "<button onclick='editRow(this)'>Edit</button>" +
+        "<button onclick='deleteRow(this)'>Delete</button>" +
+        "</td>";
+
+      document.getElementById("form").reset();
+    }
+
+    function deleteRow(btn) {
+      let row = btn.parentNode.parentNode;
+      row.remove();
+    }
+
+    function editRow(btn) {
+      selectedRow = btn.parentNode.parentNode;
+
+      document.getElementById("editName").value = selectedRow.cells[0].innerHTML;
+      document.getElementById("editAge").value = selectedRow.cells[1].innerHTML;
+      document.getElementById("editGrade").value = selectedRow.cells[2].innerHTML;
+
+      document.getElementById("editForm").style.display = "block";
+    }
+
+    function updateStudent(event) {
+      event.preventDefault();
+
+      selectedRow.cells[0].innerHTML = document.getElementById("editName").value;
+      selectedRow.cells[1].innerHTML = document.getElementById("editAge").value;
+      selectedRow.cells[2].innerHTML = document.getElementById("editGrade").value;
+
+      document.getElementById("editForm").style.display = "none";
+    }
+  </script>
+
+
+</head>
+<body>
+    <!-- 3. In previous assignment you have created a tabular data using javascript. Let’s modify that. Create a form which takes student’s details and show each student detail in table. Each row of table must contain a delete button and an edit button. On click on delete button entire row should be deleted. On click on edit button, a hidden form will appear with the values of that row. -->
+
+      <h2>Add Student</h2>
+
+      
+      <form id="form" onsubmit="addStudent(event)">
+        <input type="text" id="name" placeholder="enter name" required>
+        <input type="number" id="age" placeholder="enter age" required>
+        <input type="text" id="grade" placeholder="enter grade" required>
+        <button type="submit">add</button>
+      </form>
+
+
+      <table id="studentTable">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Grade</th>
+            <th>Action</th>
+        </tr>
+      </table>
+
+        <!-- Hidden Edit Form -->
+
+        <div id="editForm">
+            <h3>Edit Student</h3>
+          <form onsubmit="updateStudent(event)">
+            <input type="text" id="editName" required>
+            <input type="number" id="editAge" required>
+            <input type="text" id="editGrade" required>
+            <button type="submit">Update</button>
+          </form>
+        </div>
+
+
+
+        

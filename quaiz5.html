@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+
+
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial;
+    }
+    h1 {
+      font-size: 40px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+
+
+    <script>
+        let count = 0;
+        function increase () {
+        count++;
+        document.getElementById("counter").innerHTML = count;
+        }
+        function decrease () {
+            count--;
+            document.getElementById("counter").innerHTML = count;
+            // if (count > 0) count--;
+        }
+    </script>
+
+
+    
+</head>
+<body>
+    <!-- 5. Show a counter in browser. Counter should increase on click on increase button and decrease on click on decrease button. And show updated counter value in browser. -->
+
+    <h2>Counter</h2>
+     <h1 id="counter">0</h1>
+    <button onclick="increase()">increase</button>
+    <button onclick="decrease()">decrease</button>
+     
+
+          <!-- reset button add -->
+
+
+          <button onclick="count=0; document.getElementById('counter').innerHTML=count;">Reset</button>
+</body>
+</html>

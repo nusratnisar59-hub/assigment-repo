@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image hover change</title>
+    <script>
+           function changeImage() {
+            document.getElementById("myImage").src="download (2).jpg";
+           }
+           function originalImage() {
+            document.getElementById("myImage").src="download (1).jpg";
+           }
+    </script>
+    
+</head>
+<body>
+    <!-- 4. Display an image in browser. Change the picture on mouseover and set the
+first picture on mouseout. -->
+<h2>Hover over the image</h2>
+<img id="myImage" 
+src="download (1).jpg"
+ onmouseover="changeImage()"
+  onmouseout="originalImage()"
+   alt="Image">
+
+
+            or
+<!-- inline javascript -->
+ <img src="download (1).jpg"
+     onmouseover="this.src='download (2).jpg'"
+     onmouseout="this.src='download (1).jpg'">
+</body>
+</html>
